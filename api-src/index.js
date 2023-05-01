@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: 'MONGO_URI' });
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
