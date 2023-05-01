@@ -23,7 +23,7 @@ app.use('/addUser', usersRoutes);
 // });
 
 app.get('/', (req, res) => {
-    res.send("<h2>Hellow world</h2>");
+    res.sendStatus(200);
 });
 
 // app.post('/addUser', async (req,res) => {
