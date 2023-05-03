@@ -8,20 +8,25 @@ const usersRoutes = require('./router/usersRoutes');
 const incidentRoutes = require('./router/incidentRoutes');
 const assailantRoutes = require('./router/assailantRoutes');
 
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus:200
+};
 
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use('/users', usersRoutes);
 app.use('/incidents', incidentRoutes);
 app.use('/assailants', assailantRoutes);
 
-app.use(function(req,res,next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Method', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Application/json');
-});
+// app.use(function(req,res,next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Method', 'GET,PUT,POST,DELETE');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type, Application/json');
+// });
 
 app.use((req,res, next) => {
     console.log(req.path, req.method)
