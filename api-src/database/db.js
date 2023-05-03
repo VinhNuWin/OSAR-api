@@ -5,5 +5,5 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => {})
     
     .catch((error) => {
-        console.log(error)
+        console.log('not connected to mongodb server')
     })    

@@ -34,7 +34,7 @@ app.use((req,res, next) => {
 });
 
 
-app.listen(process.env.PORT, () => {
-    console.log('API is listening on port', process.env.PORT);
+app.listen(process.env.MONGO_URI, () => {
+    console.log('API is listening on port', process.env.MONGO_URI);
 });
 
