@@ -9,6 +9,6 @@ router.get('/:id', getIncident)
 
 router.post('/', createIncident) 
 
-router.put('/:id', updateIncident)
+router.put('/patch/:id', updateIncident)
 
 module.exports = router;
