@@ -49,20 +49,28 @@ const updateIncident = async (req,res) => {
 
     const incident = await Incident.findOneAndUpdate({_id: id}, {
         ...req.body
-    });
+    })
+    res.status(200).json(incident);
 
-    // const {id} = req.params;
-    // try{
-    // const updateIncident = await Incident.findById(id);
-    //     res.send(updateIncident);
-    //     console.log(updateIncident);
-    // }catch (err){
-    //     console.log(err);
-    // }
-
-    // console.log('PUT endpoint reached');
-    // console.log(id);
-    // console.log(req.body);
+    if (!incident) {
+        return res.status(400).json({error: 'No such incident'})
+    }
 };
 
-module.exports = { getAllIncidents, createIncident, updateIncident, getIncident };
+const deleteIncident = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such incident'})
+    }
+
+    const incident = await Incident.findOneAndDelete({_id: id})
+
+    if (!incident) {
+        return res.status(400).json({ error: 'no such incident'})
+    }
+
+    res.status(200).json(incident)
+};
+
+module.exports = { getAllIncidents, createIncident, updateIncident, getIncident, deleteIncident };
