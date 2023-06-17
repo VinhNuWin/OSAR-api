@@ -10,6 +10,6 @@ router.get('/:id', getAssailant)
 
 router.post('/', createAssailant) 
 
-router.put('/:id', updateAssailant)
+router.patch('/:id', updateAssailant)
 
 module.exports = router;

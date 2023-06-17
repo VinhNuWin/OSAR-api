@@ -7,6 +7,7 @@ const db = require('./database/db');
 const usersRoutes = require('./router/usersRoutes');
 const incidentRoutes = require('./router/incidentRoutes');
 const assailantRoutes = require('./router/assailantRoutes');
+const employeeRoutes = require('./router/employeeRoutes');
 
 app.use(cors());
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use('/users', usersRoutes);
 app.use('/incidents', incidentRoutes);
 app.use('/assailants', assailantRoutes);
+app.use('/employeeRoutes', employeeRoutes);
 
 app.use(function(req,res,next) {
     res.header('Access-Control-Allow-Origin', '*');

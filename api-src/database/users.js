@@ -50,7 +50,6 @@ const updateUser = async (req,res) => {
     console.log(id);
     console.log(req.body);
     console.log(req.params)
-
 };
 
 module.exports = { getAllUsers, createUser, updateUser, getUser };
