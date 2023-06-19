@@ -73,5 +73,5 @@ const employeeSchema = new Schema(
     { timestamps: true }
 );
 
-const Incident = mongoose.model('IncidentReport', incidentSchema);
-module.exports = Incident;
+const Employee = mongoose.model('EmployeeReport', employeeSchema);
+module.exports = Employee;
