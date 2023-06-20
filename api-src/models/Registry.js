@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const registrySchema = new Schema(
     {
+        registryType: {
+            type: String,
+            required: true
+        },
         email: {
             type: String,
             required: true
@@ -10,6 +14,10 @@ const registrySchema = new Schema(
         userId: {
             type: String,
             required: false,
+        },
+        location: {
+            type: String,
+            required: false
         },
         date: {
             type: String,
@@ -32,6 +40,14 @@ const registrySchema = new Schema(
                 type: Number,
                 required: false,
             },
+        },
+        fullName: {
+            type: String,
+            required: false
+        },
+        title: {
+            type: String,
+            required: false
         },
         peopleInvolved: {
             type: String,
