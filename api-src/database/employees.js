@@ -27,7 +27,7 @@ const getEmployee = async(req, res) => {
 
 const createEmployee = async (req,res) => {
     const { userId, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body.assailant;
-    console.log('createAssailant reached');
+    console.log('createEmployee reached');
 
     if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'No such employee'})
