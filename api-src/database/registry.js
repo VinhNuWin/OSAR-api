@@ -42,8 +42,8 @@ const createRegistry = async (req,res) => {
 };
 
 const updateRegistry = async (req,res) => {
-    const {id} = req.params;
-
+    const id = req.params.id;
+    
     if(!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({error: 'no such registry'})
     }
@@ -56,6 +56,7 @@ const updateRegistry = async (req,res) => {
     if(!registry) {
         return res.status(400).json({error: "No such registry"})
     }
+    console.log(req)
 };
 
 module.exports = { getAllRegistries, createRegistry, updateRegistry, getRegistry };
