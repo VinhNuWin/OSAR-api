@@ -8,6 +8,6 @@ router.get('/:id', getRegistry)
 
 router.post('/', createRegistry) 
 
-router.put('/:id', updateRegistry)
+router.patch('/:id', updateRegistry)
 
 module.exports = router;
