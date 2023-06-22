@@ -26,14 +26,14 @@ const getRegistry = async (req,res) => {
 };
 
 const createRegistry = async (req,res) => {
-    const { registryType, email, userId, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body;
+    const { registryPayload } = req.body;
     
     // if (!mongoose.Types.ObjectId.isValid(userId)) {
     //     return res.status(404).json({error: 'No such registry'})
     // }
 
     try {
-        const registry = await Registry.create({ registryType, email, userId, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments})
+        const registry = await Registry.create({ registryPayload })
         res.status(201).send({ status: 'OK', data: registry });
         console.log(req.body);
     } catch (error) {
@@ -48,8 +48,9 @@ const updateRegistry = async (req,res) => {
         return res.status(404).json({error: 'no such registry'})
     }
 
-    const registry = await Registry.findOneAndUpdate({_id: id}, {
-        ...req.body
+    const registry = await Registry.findOneAndUpdate({_id: id}, 
+        {
+            
     });
     res.status(200).json(registry);
     
