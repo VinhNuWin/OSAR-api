@@ -50,7 +50,7 @@ const updateRegistry = async (req,res) => {
 
     const registry = await Registry.findOneAndUpdate({_id: id}, 
         {
-            
+        ...registry
     });
     res.status(200).json(registry);
     
