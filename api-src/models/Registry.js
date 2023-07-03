@@ -11,7 +11,7 @@ const registrySchema = new Schema(
             type: String,
             required: true
         },
-        userId: {
+        registryId: {
             type: String,
             required: false,
         },

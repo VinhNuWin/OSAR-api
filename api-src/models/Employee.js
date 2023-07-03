@@ -3,9 +3,17 @@ const Schema = mongoose.Schema;
 
 const employeeSchema = new Schema(
     {
-    userId: {
+    registryId: {
         type: String,
         required: false,
+    },
+    fullName: {
+        type: String,
+        required: true,
+    },
+    registryType: {
+        type: String,
+        required: true,
     },
     date: {
         type: String,

@@ -26,17 +26,18 @@ const getEmployee = async(req, res) => {
 };
 
 const createEmployee = async (req,res) => {
-    const { userId, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body.assailant;
+    const { registryId, registryType, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body;
     console.log('createEmployee reached');
 
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-        return res.status(404).json({error: 'No such employee'})
-    }
-        const employeeReport = await Employee.create({userId, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments})
+    // if (!mongoose.Types.ObjectId.isValid(registryId)) {
+    //     return res.status(404).json({error: 'No such employee'})
+    // }
+    try{
+        const employeeReport = await Employee.create({registryId, registryType, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments})
         res.status(201).send({ status: 'OK', data: employeeReport });
-        console.log(req.body);
-    
-    if (!employeeReport) {
+        console.log(res.data);
+    }
+    catch (error) {
         res.status(200).json(employeeReport)
     }
 };

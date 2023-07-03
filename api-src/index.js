@@ -6,7 +6,7 @@ const cors = require('cors');
 const db = require('./database/db');
 const usersRoutes = require('./router/usersRoutes');
 const incidentRoutes = require('./router/incidentRoutes');
-const assailantRoutes = require('./router/assailantRoutes');
+const elderlyRoutes = require('./router/elderlyRoutes');
 const employeeRoutes = require('./router/employeeRoutes');
 const registryRoutes = require('./router/registryRoutes');
 
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use('/users', usersRoutes);
 app.use('/incidents', incidentRoutes);
-app.use('/assailants', assailantRoutes);
+app.use('/elderly', elderlyRoutes);
 app.use('/employeeRoutes', employeeRoutes);
 app.use('/registry', registryRoutes);
 
