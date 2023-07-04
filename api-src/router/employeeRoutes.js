@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllEmployees, updateEmployee, createEmployee, getEmployee } = require('../database/employees');
+const { getAllEmployees, updateEmployee, createEmployee, getEmployee } = require('../database/employee');
 
 router.use(express.json());
 

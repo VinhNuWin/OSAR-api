@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const elderlySchema = new Schema(
+const sexualAssaultSchema = new Schema(
     {
         registryId: {
             type: String,
@@ -27,27 +27,27 @@ const elderlySchema = new Schema(
             type: Object,
             required: false,
         },
+        alcoholInvolved: {
+            type: String,
+            required: false,
+        },
+        drugsInvolved: {
+            type: String,
+            required: false,
+        },
+        wasSurvivorAsleep: {
+            type: String,
+            required: false,
+        },
+        verbalThreats: {
+            type: String,
+            required: false,
+        },
+        resistanceOffered: {
+            type: String,
+            required: false,
+        },
         detailsOfIncident: {
-            type: String,
-            required: false,
-        },
-        peopleInvolved: {
-            type: String,
-            required: false,
-        },
-        relationshipToReporter: {
-            type: String,
-            required: false,
-        },
-        concerningThreatsOrActions: {
-            type: String,
-            required: false,
-        },
-        additionalIncidentsOfAbuse: {
-            type: String,
-            required: false,
-        },
-        witnesses: {
             type: String,
             required: false,
         },
@@ -55,21 +55,41 @@ const elderlySchema = new Schema(
             type: String,
             required: false,
         },
-        otherPeopleAtRisk: {
+        useOfWeapons: {
             type: String,
-            required: true,
+            required: false,
         },
-        currentLivingSituationSafe: {
+        useOfRestraints: {
             type: String,
-            required: true,
+            required: false,
+        },
+        assailantGender: {
+            type: String,
+            required: false,
+        },
+        raceEthnicity: {
+            type: String,
+            required: false,
+        },
+        assailantsFullName: {
+            type: String,
+            required: false,
+        },
+        survivorsFullName: {
+            type: String,
+            required: false,
+        },
+        survivorGender: {
+            type: String,
+            required: false,
         },
         additionalSupportNeeded: {
             type: String,
-            required: true,
+            required: false,
         },
     },
-    { timestamps: true }
+    { timestamps: false }
 );
 
-const Elderly = mongoose.model('ElderlyReport', elderlySchema);
-module.exports = Elderly;
+const SexualAssault = mongoose.model('SexualAssaultReport', sexualAssaultSchema);
+module.exports = SexualAssault;

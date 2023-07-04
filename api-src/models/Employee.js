@@ -58,19 +58,23 @@ const employeeSchema = new Schema(
         required: false,
     },
     seekedMedicalAttention: {
-        type: Boolean,
+        type: String,
+        required: false,
+    },
+    evidence: {
+        type: String,
         required: false,
     },
     reportedToHigherPersonel: {
-        type: Boolean,
+        type: String,
         required: false,
     },
     actionsTakenSinceIncident: {
         type: String,
         required: false,
     },
-    personalAffectFromIncident: {
-        type: Boolean,
+    personalAffect: {
+        type: String,
         required: false,
     },
     additionalComments: {

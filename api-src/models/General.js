@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const elderlySchema = new Schema(
+const generalSchema = new Schema(
     {
         registryId: {
             type: String,
@@ -71,5 +71,5 @@ const elderlySchema = new Schema(
     { timestamps: true }
 );
 
-const Elderly = mongoose.model('ElderlyReport', elderlySchema);
-module.exports = Elderly;
+const General = mongoose.model('GeneralReport', generalSchema);
+module.exports = General;

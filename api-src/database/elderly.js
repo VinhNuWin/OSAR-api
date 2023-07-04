@@ -32,7 +32,7 @@ const createElderly = async (req,res) => {
     try{
         const elderlyReport = await Elderly.create({ registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, additionalSupportNeeded })
         res.status(201).send({ status: 'OK', data: elderlyReport });
-        console.log(res.data);
+        console.log(res.body);
     }
     catch (error) {
         res.status(200).json(error)

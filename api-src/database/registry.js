@@ -35,7 +35,7 @@ const createRegistry = async (req,res) => {
     try {
         const registry = await Registry.create({ registryType, email })
         res.status(201).send({ status: 'OK', data: registry });
-        console.log(req.body);
+        console.log(registry);
     } catch (error) {
         res.status(400).json({error: error.message})
     }

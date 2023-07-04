@@ -4,7 +4,7 @@ const db = require('./db');
 const mongoose = require('mongoose');
 
 const getAllEmployees = async(req, res) => {
-    const employee = await Assailant.find({})
+    const employee = await Employee.find({})
     
     res.status(200).json(employee);
 };
@@ -26,19 +26,16 @@ const getEmployee = async(req, res) => {
 };
 
 const createEmployee = async (req,res) => {
-    const { registryId, registryType, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body;
+    const { registryId, registryType, fullName, date, address, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, evidence, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments } = req.body;
     console.log('createEmployee reached');
 
-    // if (!mongoose.Types.ObjectId.isValid(registryId)) {
-    //     return res.status(404).json({error: 'No such employee'})
-    // }
     try{
-        const employeeReport = await Employee.create({registryId, registryType, date, address, streetAddress, city, state, postal, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments})
+        const employeeReport = await Employee.create({registryId, registryType, fullName, date, address, peopleInvolved, detailsOfIncident, witnesses, incidentOutcome, abilitiesAffected, seekedMedicalAttention, evidence, reportedToHigherPersonel, actionsTakenSinceIncident, personalAffectFromIncident, additionalComments })
         res.status(201).send({ status: 'OK', data: employeeReport });
-        console.log(res.data);
+        console.log(employeeReport);
     }
     catch (error) {
-        res.status(200).json(employeeReport)
+        res.status(200).json(error)
     }
 };
 
