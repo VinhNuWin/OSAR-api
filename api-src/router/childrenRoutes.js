@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllChildren, updateChildren, createChildren, getChildren } = require('../database/Children');
+const { getAllChildren, updateChildren, createChildren, getChildren } = require('../database/children');
 
 router.use(express.json());
 
