@@ -4,9 +4,9 @@ const db = require('./db');
 const mongoose = require('mongoose');
 
 const getAllElderly = async(req, res) => {
-    const employee = await Assailant.find({})
+    const elderly = await Assailant.find({})
     
-    res.status(200).json(employee);
+    res.status(200).json(elderly);
 };
 
 const getElderly = async(req, res) => {
@@ -18,11 +18,11 @@ const getElderly = async(req, res) => {
 
     const elderly = await Elderly.findById(id)
 
-    if (!employee) {
-        return res.status(404).json({error: 'No such employee'})
+    if (!elderly) {
+        return res.status(404).json({error: 'No such elderly'})
     }
 
-    res.status(200).json(employee)
+    res.status(200).json(elderly)
 };
 
 const createElderly = async (req,res) => {
@@ -43,7 +43,7 @@ const updateElderly = async (req,res) => {
     const { id } = req.params
 
     if(!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'no such employee'})
+        return res.status(404).json({error: 'no such elderly'})
     }
 
     const elderly = await Incident.findOneAndUpdate({_id: id}, {
@@ -52,7 +52,7 @@ const updateElderly = async (req,res) => {
     res.status(200).json(elderly);
 
     if (!elderly) {
-        return res.status(400).json({error: 'No such employee'})
+        return res.status(400).json({error: 'No such elderly'})
     }
 };
 

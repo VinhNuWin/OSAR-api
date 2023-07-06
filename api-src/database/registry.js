@@ -4,9 +4,9 @@ const db = require('./db');
 const mongoose = require('mongoose');
 
 const getAllRegistries = async(req, res) => {
-    const users = await Registry.find({})
+    const registry = await Registry.find({})
     
-    res.status(200).json(registries);
+    res.status(200).json(registry);
 };
 
 const getRegistry = async (req,res) => {

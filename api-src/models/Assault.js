@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const sexualAssaultSchema = new Schema(
+const assaultSchema = new Schema(
     {
         registryId: {
             type: String,
@@ -91,5 +91,5 @@ const sexualAssaultSchema = new Schema(
     { timestamps: false }
 );
 
-const SexualAssault = mongoose.model('SexualAssaultReport', sexualAssaultSchema);
-module.exports = SexualAssault;
+const Assault = mongoose.model('AssaultReport', assaultSchema);
+module.exports = Assault;

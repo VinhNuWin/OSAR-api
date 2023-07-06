@@ -19,7 +19,7 @@ app.use('/children', childrenRoutes);
 app.use('/spouse', spouseRoutes);
 app.use('/elderly', elderlyRoutes);
 app.use('/employee', employeeRoutes);
-app.use('/sexualAssault', sexualAssaultRoutes);
+app.use('/assault', assaultRoutes);
 app.use('/general', generalRoutes);
 app.use('/registry', registryRoutes);
 

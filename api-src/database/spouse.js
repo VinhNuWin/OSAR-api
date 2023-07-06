@@ -4,9 +4,9 @@ const db = require('./db');
 const mongoose = require('mongoose');
 
 const getAllSpouse = async(req, res) => {
-    const employee = await Assailant.find({})
+    const spouse = await Assailant.find({})
     
-    res.status(200).json(employee);
+    res.status(200).json(spouse);
 };
 
 const getSpouse = async(req, res) => {
@@ -18,11 +18,11 @@ const getSpouse = async(req, res) => {
 
     const spouse = await Spouse.findById(id)
 
-    if (!employee) {
-        return res.status(404).json({error: 'No such employee'})
+    if (!spouse) {
+        return res.status(404).json({error: 'No such spouse'})
     }
 
-    res.status(200).json(employee)
+    res.status(200).json(spouse)
 };
 
 const createSpouse = async (req,res) => {
@@ -43,7 +43,7 @@ const updateSpouse = async (req,res) => {
     const { id } = req.params
 
     if(!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'no such employee'})
+        return res.status(404).json({error: 'no such spouse'})
     }
 
     const spouse = await Incident.findOneAndUpdate({_id: id}, {
@@ -52,7 +52,7 @@ const updateSpouse = async (req,res) => {
     res.status(200).json(spouse);
 
     if (!spouse) {
-        return res.status(400).json({error: 'No such employee'})
+        return res.status(400).json({error: 'No such spouse'})
     }
 };
 

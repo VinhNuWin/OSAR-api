@@ -4,9 +4,9 @@ const db = require('./db');
 const mongoose = require('mongoose');
 
 const getAllChildren = async(req, res) => {
-    const employee = await Assailant.find({})
+    const children = await Children.find({})
     
-    res.status(200).json(employee);
+    res.status(200).json(children);
 };
 
 const getChildren = async(req, res) => {
@@ -18,11 +18,11 @@ const getChildren = async(req, res) => {
 
     const children = await Children.findById(id)
 
-    if (!employee) {
-        return res.status(404).json({error: 'No such employee'})
+    if (!children) {
+        return res.status(404).json({error: 'No such general'})
     }
 
-    res.status(200).json(employee)
+    res.status(200).json(children)
 };
 
 const createChildren = async (req,res) => {
@@ -43,16 +43,16 @@ const updateChildren = async (req,res) => {
     const { id } = req.params
 
     if(!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'no such employee'})
+        return res.status(404).json({error: 'no such general'})
     }
 
-    const children = await Incident.findOneAndUpdate({_id: id}, {
+    const children = await Children.findOneAndUpdate({_id: id}, {
         ...req.body
     })
     res.status(200).json(children);
 
     if (!children) {
-        return res.status(400).json({error: 'No such employee'})
+        return res.status(400).json({error: 'No such general'})
     }
 };
 
