@@ -4,11 +4,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./database/db');
-const childrenRoutes = require('./router/childrenRoutes');
+const childrenRoutes = require('/Users/vinhnuwin/react-app/OSAR-DB/api-src/router/childrenRoutes.js');
 const spouseRoutes = require('./router/spouseRoutes');
 const elderlyRoutes = require('./router/elderlyRoutes');
 const employeeRoutes = require('./router/employeeRoutes');
-const sexualAssaultRoutes = require('./router/sexualAssaultRoutes');
+const assaultRoutes = require('./router/assaultRoutes');
 const generalRoutes = require('./router/generalRoutes');
 const registryRoutes = require('./router/registryRoutes');
 
