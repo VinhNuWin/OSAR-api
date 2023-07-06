@@ -52,7 +52,7 @@ const updateChildren = async (req,res) => {
     res.status(200).json(children);
 
     if (!children) {
-        return res.status(400).json({error: 'No such general'})
+        return res.status(400).json({error: 'No such children'})
     }
 };
 
