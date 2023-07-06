@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllGeneral, updateGeneral, createGeneral, getGeneral } = require('../database/General');
+const { getAllGeneral, updateGeneral, createGeneral, getGeneral } = require('../database/general');
 
 router.use(express.json());
 

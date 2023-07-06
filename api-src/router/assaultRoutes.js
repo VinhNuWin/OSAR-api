@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllAssault, updateAssault, createAssault, getAssault } = require('../database/Assault');
+const { getAllAssault, updateAssault, createAssault, getAssault } = require('../database/assault');
 
 router.use(express.json());
 
