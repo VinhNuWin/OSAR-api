@@ -37,6 +37,7 @@ const createGeneral = async (req,res) => {
     catch (error) {
         res.status(200).json(error)
     }
+    console.log('')
 };
 
 const updateGeneral = async (req,res) => {

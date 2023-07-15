@@ -57,18 +57,18 @@ const generalSchema = new Schema(
         },
         otherPeopleAtRisk: {
             type: String,
-            required: true,
+            required: false,
         },
         currentLivingSituationSafe: {
             type: String,
-            required: true,
+            required: false,
         },
         additionalSupportNeeded: {
             type: String,
-            required: true,
+            required: false,
         },
     },
-    { timestamps: true }
+    { timestamps: false }
 );
 
 const General = mongoose.model('GeneralReport', generalSchema);
