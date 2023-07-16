@@ -26,11 +26,22 @@ const getElderly = async(req, res) => {
 };
 
 const createElderly = async (req,res) => {
-    const { registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, additionalSupportNeeded } = req.body;
-    console.log('createElderly reached');
+    let registryType = req.body.registryType;
+    let registryReport = {
+        registryId: req.body.registryId,
+        registryType: req.body.registryType,
+        immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
+        date: req.body.registryReport.date,
+        address:  req.body.registryReport.address,
+        detailsOfIncident: req.body.registryReport.detailsOfIncident,
+        peopleInvolved: req.body.registryReport.peopleInvolved,
+        witnesses: req.body.registryReport.witnesses,
+        evidence: req.body.registryReport.evidence,
+        additionalComments: req.body.registryReport.additionalComments
+    }
 
     try{
-        const elderlyReport = await Elderly.create({ registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, additionalSupportNeeded })
+        const elderlyReport = await Elderly.create({ registryReport, registryType })
         res.status(201).send({ status: 'OK', data: elderlyReport });
         console.log(res.body);
     }

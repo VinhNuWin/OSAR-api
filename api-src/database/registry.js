@@ -26,14 +26,14 @@ const getRegistry = async (req,res) => {
 };
 
 const createRegistry = async (req,res) => {
-    const { registryType, email } = req.body;
+    const email = req.body.email;
     
     // if (!mongoose.Types.ObjectId.isValid(userId)) {
     //     return res.status(404).json({error: 'No such registry'})
     // }
 
     try {
-        const registry = await Registry.create({ registryType, email })
+        const registry = await Registry.create({ email })
         res.status(201).send({ status: 'OK', data: registry });
         console.log(registry);
     } catch (error) {

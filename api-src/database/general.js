@@ -26,18 +26,29 @@ const getGeneral = async(req, res) => {
 };
 
 const createGeneral = async (req,res) => {
-    const { registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, currentLivingSituationSafe, additionalSupportNeeded } = req.body;
-    console.log('createGeneral reached');
+    let registryType = req.body.registryType;
+    let registryReport = {
+        registryId: req.body.registryId,
+        registryType: req.body.registryType,
+        immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
+        date: req.body.registryReport.date,
+        address:  req.body.registryReport.address,
+        detailsOfIncident: req.body.registryReport.detailsOfIncident,
+        peopleInvolved: req.body.registryReport.peopleInvolved,
+        witnesses: req.body.registryReport.witnesses,
+        evidence: req.body.registryReport.evidence,
+        additionalComments: req.body.registryReport.additionalComments
+    }
+    console.log(req.body);
 
     try{
-        const generalReport = await General.create({ registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, currentLivingSituationSafe, additionalSupportNeeded  })
+        const generalReport = await General.create({ registryType, registryReport })
         res.status(201).send({ status: 'OK', data: generalReport });
         console.log(generalReport);
     }
     catch (error) {
         res.status(200).json(error)
     }
-    console.log('')
 };
 
 const updateGeneral = async (req,res) => {
@@ -58,3 +69,5 @@ const updateGeneral = async (req,res) => {
 };
 
 module.exports = { getAllGeneral, createGeneral, updateGeneral, getGeneral };
+
+//registryReport, registryId, registryType, fullName, date, address, detailsOfIncident, peopleInvolved, relationshipToReporter, witnesses, additionalIncidentsOfAbuse, evidence, otherPeopleAtRisk, currentLivingSituationSafe, additionalSupportNeeded

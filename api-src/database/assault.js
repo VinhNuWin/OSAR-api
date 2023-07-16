@@ -26,11 +26,22 @@ const getAssault = async(req, res) => {
 };
 
 const createAssault = async (req,res) => {
-    const { registryReport, registryId, registryType, fullName, date, address, alcoholInvolved, drugsInvolved, wasSurvivorAsleep, verbalThreats, resistanceOffered, detailsOfIncident, evidence, useOfWeapons, useOfRestraints, assailantGender, raceEthnicity, assailantsFullName, survivorsFullName, survivorGender, additionalSupportNeeded } = req.body;
-    console.log('createAssault reached');
+    let registryType = req.body.registryType;
+    let registryReport = {
+        registryId: req.body.registryId,
+        registryType: req.body.registryType,
+        immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
+        date: req.body.registryReport.date,
+        address:  req.body.registryReport.address,
+        detailsOfIncident: req.body.registryReport.detailsOfIncident,
+        peopleInvolved: req.body.registryReport.peopleInvolved,
+        witnesses: req.body.registryReport.witnesses,
+        evidence: req.body.registryReport.evidence,
+        additionalComments: req.body.registryReport.additionalComments
+    }
 
     try{
-        const assaultReport = await Assault.create({ registryReport, registryId, registryType, fullName, date, address, alcoholInvolved, drugsInvolved, wasSurvivorAsleep, verbalThreats, resistanceOffered, detailsOfIncident, evidence, useOfWeapons, useOfRestraints, assailantGender, raceEthnicity, assailantsFullName, survivorsFullName, survivorGender, additionalSupportNeeded })
+        const assaultReport = await Assault.create({ registryReport, registryType })
         res.status(201).send({ status: 'OK', data: assaultReport });
         console.log(assaultReport);
     }
