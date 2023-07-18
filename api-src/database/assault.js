@@ -30,14 +30,28 @@ const createAssault = async (req,res) => {
     let registryReport = {
         registryId: req.body.registryId,
         registryType: req.body.registryType,
-        immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
+        fullName: req.body.registryReport.fullName,
         date: req.body.registryReport.date,
-        address:  req.body.registryReport.address,
+        address: {
+            streetAddress: req.body.registryReport.streetAddress,
+            city: req.body.registryReport.city,
+            state: req.body.registryReport.state,
+            zipcode: req.body.registryReport.zipcode,
+        },
+        alcoholInvolved: req.body.registryReport.alcoholInvolved,
+        drugsInvolved: req.body.registryReport.drugsInvolved,
+        wasSurvivorAsleep: req.body.registryReport.wasSurvivorAsleep,
+        verbalThreats: req.body.registryReport.verbalThreats,
+        resistanceOffered: req.body.registryReport.resistanceOffered,
         detailsOfIncident: req.body.registryReport.detailsOfIncident,
-        peopleInvolved: req.body.registryReport.peopleInvolved,
-        witnesses: req.body.registryReport.witnesses,
+        areasAssaulted: req.body.registryReport.areasAssaulted,
         evidence: req.body.registryReport.evidence,
-        additionalComments: req.body.registryReport.additionalComments
+        useOfWeapons: req.body.registryReport.useOfWeapons,
+        useOfRestraints: req.body.registryReport.useOfRestraints,
+        assailantGender: req.body.registryReport.assailantGender,
+        raceEthnicity: req.body.registryReport.raceEthnicity,
+        assailantsFullName: req.body.registryReport.assailantsFullName,
+        survivorGender: req.body.registryReport.survivorGender,
     }
 
     try{

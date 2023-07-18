@@ -28,7 +28,9 @@ const getSpouse = async(req, res) => {
 const createSpouse = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
-        registryId: req.body.registryReport.registryId,
+        registryId: req.body.registryId,
+        registryType: req.body.registryType,
+        fullName: req.body.registryReport.fullName,
         immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
         fullName: req.body.registryReport.fullName,
         date: req.body.registryReport.date,
@@ -38,7 +40,6 @@ const createSpouse = async (req,res) => {
             state: req.body.registryReport.state,
             zipcode: req.body.registryReport.zipcode,
         },
-        title: req.body.registryReport.title,
         detailsOfIncident: req.body.registryReport.detailsOfIncident,
         peopleInvolved: req.body.registryReport.peopleInvolved,
         relationshipToReporter: req.body.registryReport.relationshipToReporter,
@@ -47,27 +48,10 @@ const createSpouse = async (req,res) => {
         concerningThreatsOrActions: req.body.registryReport.concerningThreatsOrActions,
         evidence: req.body.registryReport.evidence,
         otherPeopleAtRisk: req.body.registryReport.otherPeopleAtRisk,
-        incidentOutcome: req.body.registryReport.incidentOutcome,
-        abilitiesAffected: req.body.registryReport.abilitiesAffected,
         currentLivingSituationSafe: req.body.registryReport.currentLivingSituationSafe,
-        seekedMedicalAttention: req.body.registryReport.seekedMedicalAttention,
-        reportedToHigherPersonel: req.body.registryReport.reportedToHigherPersonel,
-        personalAffect: req.body.registryReport.personalAffect,
-        actionsTakenSinceIncident: req.body.registryReport.actionsTakenSinceIncident,
         additionalComments: req.body.registryReport.additionalComments,
         additionalSupportNeeded: req.body.registryReport.additionalSupportNeeded,
         alcoholInvolved: req.body.registryReport.alcoholInvolved,
-        drugsInvolved: req.body.registryReport.drugsInvolved,
-        wasSurvivorAsleep: req.body.registryReport.wasSurvivorAsleep,
-        verbalThreats: req.body.registryReport.verbalThreats,
-        resistanceOffered: req.body.registryReport.resistanceOffered,
-        useOfWeapons: req.body.registryReport.useOfWeapons,
-        useOfRestraints: req.body.registryReport.useOfRestraints,
-        assailantGender: req.body.registryReport.assailantGender,
-        raceEthnicity: req.body.registryReport.raceEthnicity,
-        assailantsFullName: req.body.registryReport.assailantsFullName,
-        survivorsFullName: req.body.registryReport.survivorsFullName,
-        survivorGender: req.body.registryReport.survivorGender,
     }
 
     console.log(req.body);

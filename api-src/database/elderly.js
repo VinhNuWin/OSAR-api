@@ -30,14 +30,20 @@ const createElderly = async (req,res) => {
     let registryReport = {
         registryId: req.body.registryId,
         registryType: req.body.registryType,
+        fullName: req.body.registryReport.fullName,
         immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
         date: req.body.registryReport.date,
         address:  req.body.registryReport.address,
         detailsOfIncident: req.body.registryReport.detailsOfIncident,
         peopleInvolved: req.body.registryReport.peopleInvolved,
+        relationshipToReporter: req.body.registryReport.relationshipToReporter,
+        additionalIncidentsOfAbuse: req.body.registryReport.additionalIncidentsOfAbuse,
+        concerningThreatsOrActions: req.body.registryReport.concerningThreatsOrActions,
         witnesses: req.body.registryReport.witnesses,
         evidence: req.body.registryReport.evidence,
-        additionalComments: req.body.registryReport.additionalComments
+        otherPeopleAtRisk: req.body.registryReport.otherPeopleAtRisk,
+        currentLivingSituationSafe: req.body.registryReport.currentLivingSituationSafe,
+        additionalSupportNeeded: req.body.registryReport.additionalSupportNeeded,
     }
 
     try{
