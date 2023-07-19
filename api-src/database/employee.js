@@ -28,8 +28,8 @@ const getEmployee = async(req, res) => {
 const createEmployee = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
-        registryId: req.body.registryReport.registryId,
-        registryType: req.body.registryReport.registryType,
+        registryId: req.body.registryId,
+        registryType: req.body.registryType,
         fullName: req.body.registryReport.fullName,
         title: req.body.registryReport.title,
         date: req.body.registryReport.date,
