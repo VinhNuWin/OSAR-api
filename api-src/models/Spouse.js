@@ -11,6 +11,10 @@ const spouseSchema = new Schema(
             type: String,
             required: false,
         },
+        registryReport: {
+            type: Object,
+            required: true,
+        },
         immediateDangerOrMedicalAttention: {
             type: String,
             required: false,
@@ -57,15 +61,15 @@ const spouseSchema = new Schema(
         },
         otherPeopleAtRisk: {
             type: String,
-            required: true,
+            required: false,
         },
         currentLivingSituationSafe: {
             type: String,
-            required: true,
+            required: false,
         },
         additionalSupportNeeded: {
             type: String,
-            required: true,
+            required: false,
         },
     },
     { timestamps: true }

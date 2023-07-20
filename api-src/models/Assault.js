@@ -11,6 +11,10 @@ const assaultSchema = new Schema(
             type: String,
             required: false,
         },
+        registryReport: {
+            type: Object,
+            required: true,
+        },
         immediateDangerOrMedicalAttention: {
             type: String,
             required: false,
@@ -88,7 +92,7 @@ const assaultSchema = new Schema(
             required: false,
         },
     },
-    { timestamps: false }
+    { timestamps: true }
 );
 
 const Assault = mongoose.model('AssaultReport', assaultSchema);
