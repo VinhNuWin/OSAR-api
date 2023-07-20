@@ -38,7 +38,7 @@ const createAssault = async (req,res) => {
             state: req.body.state,
             zipcode: req.body.zipcode,
         },
-        alcoholInvolved: req.registryReport.alcoholInvolved,
+        alcoholInvolved: req.body.alcoholInvolved,
         drugsInvolved: req.body.drugsInvolved,
         wasSurvivorAsleep: req.body.wasSurvivorAsleep,
         verbalThreats: req.body.verbalThreats,
