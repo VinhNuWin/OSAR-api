@@ -30,16 +30,16 @@ const createGeneral = async (req,res) => {
     let registryReport = {
         registryId: req.body.registryId,
         registryType: req.body.registryType,
-        fullName: req.body.fullName,
-        immediateDangerOrMedicalAttention: req.body.immediateDangerOrMedicalAttention,
-        date: req.body.date,
-        address:  req.body.address,
-        detailsOfIncident: req.body.detailsOfIncident,
-        peopleInvolved: req.body.peopleInvolved,
-        witnesses: req.body.witnesses,
-        evidence: req.body.evidence,
-        additionalComments: req.body.additionalComments
+        immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
+        date: req.body.registryReport.date,
+        address:  req.body.registryReport.address,
+        detailsOfIncident: req.body.registryReport.detailsOfIncident,
+        peopleInvolved: req.body.registryReport.peopleInvolved,
+        witnesses: req.body.registryReport.witnesses,
+        evidence: req.body.registryReport.evidence,
+        additionalComments: req.body.registryReport.additionalComments
     }
+
     console.log(req.body);
 
     try{

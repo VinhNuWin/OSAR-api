@@ -13,7 +13,7 @@ const generalSchema = new Schema(
         },
         registryReport: {
             type: Object,
-            required: true,
+            required: false,
         },
         immediateDangerOrMedicalAttention: {
             type: String,
