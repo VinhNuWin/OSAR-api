@@ -28,8 +28,8 @@ const getSpouse = async(req, res) => {
 const createSpouse = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
-        registryId: req.body.registryId,
         registryType: req.body.registryType,
+        registryId: req.body.registryReport.registryId,
         fullName: req.body.registryReport.fullName,
         immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
         fullName: req.body.registryReport.fullName,

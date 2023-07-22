@@ -28,8 +28,8 @@ const getAssault = async(req, res) => {
 const createAssault = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
+        registryType: req.body.registryType,
         registryId: req.body.registryReport.registryId,
-        registryType: req.body.registryReport.registryType,
         fullName: req.body.registryReport.fullName,
         date: req.body.registryReport.date,
         address: req.body.registryReport.address,

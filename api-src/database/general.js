@@ -28,8 +28,8 @@ const getGeneral = async(req, res) => {
 const createGeneral = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
-        registryId: req.body.registryId,
         registryType: req.body.registryType,
+        registryId: req.body.registryReport.registryId,
         immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
         date: req.body.registryReport.date,
         address:  req.body.registryReport.address,

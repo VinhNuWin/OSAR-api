@@ -28,8 +28,8 @@ const getChildren = async(req, res) => {
 const createChildren = async (req,res) => {
     let registryType = req.body.registryType;
     let registryReport = {
-        registryId: req.body.registryId,
         registryType: req.body.registryType,
+        registryId: req.body.registryReport.registryId,
         fullName: req.body.registryReport.fullName,
         immediateDangerOrMedicalAttention: req.body.registryReport.immediateDangerOrMedicalAttention,
         age: req.body.registryReport.age,
