@@ -35,7 +35,7 @@ const createChildren = async (req, res) => {
       req.body.registryReport.immediateDangerOrMedicalAttention,
     age: req.body.registryReport.age,
     date: req.body.registryReport.date,
-    address: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     detailsOfIncident: req.registryReport.detailsOfIncident,
     peopleInvolved: req.body.registryReport.peopleInvolved,
     relationshipToReporter: req.body.registryReport.relationshipToReporter,

@@ -33,7 +33,7 @@ const createEmployee = async (req, res) => {
     date: req.body.registryReport.date,
     fullName: req.body.registryReport.fullName,
     title: req.body.registryReport.title,
-    incidentAddress: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     peopleInvolved: req.body.registryReport.peopleInvolved,
     detailsOfIncident: req.body.registryReport.detailsOfIncident,
     witnesses: req.body.registryReport.witnesses,

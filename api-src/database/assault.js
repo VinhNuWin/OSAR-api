@@ -32,7 +32,7 @@ const createAssault = async (req, res) => {
     registryId: req.body.registryReport.registryId,
     fullName: req.body.registryReport.fullName,
     date: req.body.registryReport.date,
-    incidentAddress: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     alcoholInvolved: req.body.registryReport.alcoholInvolved,
     drugsInvolved: req.body.registryReport.drugsInvolved,
     wasSurvivorAsleep: req.body.registryReport.wasSurvivorAsleep,
@@ -46,7 +46,6 @@ const createAssault = async (req, res) => {
     assailantGender: req.body.registryReport.assailantGender,
     raceEthnicity: req.body.registryReport.raceEthnicity,
     assailantsFullName: req.body.registryReport.assailantsFullName,
-    survivorGender: req.body.registryReport.survivorGender,
   };
 
   try {

@@ -32,9 +32,9 @@ const createElderly = async (req, res) => {
     registryId: req.body.registryReport.registryId,
     date: req.body.registryReport.date,
     fullName: req.body.registryReport.fullName,
-    incidentAddress: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     detailsOfIncident: req.body.registryReport.detailsOfIncident,
-    peopleInvolved: req.body.registryReport.peopleInvolved,
+    assailantsFullName: req.body.registryReport.peopleInvolved,
     relationshipToReporter: req.body.registryReport.relationshipToReporter,
     additionalIncidentsOfAbuse:
       req.body.registryReport.additionalIncidentsOfAbuse,
@@ -45,7 +45,6 @@ const createElderly = async (req, res) => {
     otherPeopleAtRisk: req.body.registryReport.otherPeopleAtRisk,
     currentLivingSituationSafe:
       req.body.registryReport.currentLivingSituationSafe,
-    additionalSupportNeeded: req.body.registryReport.additionalSupportNeeded,
   };
 
   try {

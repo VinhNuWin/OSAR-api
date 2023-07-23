@@ -32,7 +32,7 @@ const createSpouse = async (req, res) => {
     registryId: req.body.registryReport.registryId,
     fullName: req.body.registryReport.fullName,
     date: req.body.registryReport.date,
-    incidentAddress: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     detailsOfIncident: req.body.registryReport.detailsOfIncident,
     peopleInvolved: req.body.registryReport.peopleInvolved,
     relationshipToReporter: req.body.registryReport.relationshipToReporter,

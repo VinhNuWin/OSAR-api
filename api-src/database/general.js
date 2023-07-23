@@ -32,7 +32,7 @@ const createGeneral = async (req, res) => {
     registryId: req.body.registryReport.registryId,
     date: req.body.registryReport.date,
     fullName: req.body.registryReport.fullName,
-    incidentAddress: req.body.registryReport.address,
+    incidentAddress: req.body.registryReport.incidentAddress,
     detailsOfIncident: req.body.registryReport.detailsOfIncident,
     peopleInvolved: req.body.registryReport.peopleInvolved,
     witnesses: req.body.registryReport.witnesses,
