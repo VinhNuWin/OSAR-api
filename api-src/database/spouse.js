@@ -46,7 +46,6 @@ const createSpouse = async (req, res) => {
     currentLivingSituationSafe:
       req.body.registryReport.currentLivingSituationSafe,
     additionalComments: req.body.registryReport.additionalComments,
-    additionalSupportNeeded: req.body.registryReport.additionalSupportNeeded,
     alcoholInvolved: req.body.registryReport.alcoholInvolved,
   };
 

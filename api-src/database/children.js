@@ -31,8 +31,6 @@ const createChildren = async (req, res) => {
     registryType: req.body.registryType,
     registryId: req.body.registryReport.registryId,
     fullName: req.body.registryReport.fullName,
-    immediateDangerOrMedicalAttention:
-      req.body.registryReport.immediateDangerOrMedicalAttention,
     age: req.body.registryReport.age,
     date: req.body.registryReport.date,
     incidentAddress: req.body.registryReport.incidentAddress,
@@ -40,15 +38,7 @@ const createChildren = async (req, res) => {
     peopleInvolved: req.body.registryReport.peopleInvolved,
     relationshipToReporter: req.body.registryReport.relationshipToReporter,
     witnesses: req.body.registryReport.witnesses,
-    additionalIncidentsOfAbuse:
-      req.body.registryReport.additionalIncidentsOfAbuse,
-    concerningThreatsOrActions:
-      req.body.registryReport.concerningThreatsOrActions,
     evidence: req.body.registryReport.evidence,
-    otherPeopleAtRisk: req.body.registryReport.otherPeopleAtRisk,
-    currentLivingSituationSafe:
-      req.body.registryReport.currentLivingSituationSafe,
-    additionalSupportNeeded: req.body.registryReport.additionalSupportNeeded,
   };
 
   try {
